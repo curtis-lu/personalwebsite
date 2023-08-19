@@ -9,7 +9,7 @@ params:
   env: production
   description: "Curtis Lu's Blog. "
   author: Curtis Lu
-  images: ["bouldering-wall.png"]
+  images: ["bouldering-wall.jpeg"]
 
   homeInfoParams:
     Title: "Hi! I'm Curtis Lu."
