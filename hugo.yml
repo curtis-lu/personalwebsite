@@ -6,9 +6,15 @@ googleAnalytics: G-F88W4SJ3XD
 disqusShortname: curtislu-in
 
 params:
+  env: production
+  description: "Curtis Lu's Blog. "
+  author: Curtis Lu
+  images: ["bouldering-wall.png"]
+
   homeInfoParams:
     Title: "Hi! I'm Curtis Lu."
     Content: 'Welcome to my blog. Here you can find something I want to share with you!'
+
   socialIcons:
     - name: linkedIn
       url: "https://www.linkedin.com/in/pingchienlu/"
@@ -16,13 +22,13 @@ params:
       url: "https://twitter.com/curtislu368"
     - name: github
       url: "https://github.com/curtis-lu"
+
   ShowBreadCrumbs: true
   showReadingTime: true
   showShareButtons: true
   showPostNavLinks: true
   ShowCodeCopyButtons: true
   math: true
-  env: production
   comments: true
 
 menu:
