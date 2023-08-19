@@ -2,6 +2,7 @@ baseURL: "https://curtislu.in"
 languageCode: en-us
 title: Curtis Lu
 theme: PaperMod
+googleAnalytics: G-F88W4SJ3XD
 
 params:
   homeInfoParams:
