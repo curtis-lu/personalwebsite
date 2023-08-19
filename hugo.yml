@@ -3,6 +3,7 @@ languageCode: en-us
 title: Curtis Lu
 theme: PaperMod
 googleAnalytics: G-F88W4SJ3XD
+disqusShortname: curtislu-in
 
 params:
   homeInfoParams:
@@ -22,6 +23,7 @@ params:
   ShowCodeCopyButtons: true
   math: true
   env: production
+  comments: true
 
 menu:
   main:
