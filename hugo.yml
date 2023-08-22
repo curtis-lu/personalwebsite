@@ -4,6 +4,10 @@ title: Curtis Lu
 theme: PaperMod
 googleAnalytics: G-F88W4SJ3XD
 disqusShortname: curtislu-in
+enableInlineShortcodes: true
+enableRobotsTXT: true
+pygmentsUseClasses: true
+
 
 params:
   env: production
@@ -49,3 +53,10 @@ menu:
       name: Archives
       url: /archives/
       weight: 40
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        noClasses: false
