@@ -35,6 +35,15 @@ params:
   math: true
   comments: true
 
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
 menu:
   main:
     - identifier: about
@@ -53,6 +62,9 @@ menu:
       name: Archives
       url: /archives/
       weight: 40
+    - name: Search
+      url: search/
+      weight: 50
 
 markup:
     goldmark:
@@ -60,3 +72,9 @@ markup:
             unsafe: true
     highlight:
         noClasses: false
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
