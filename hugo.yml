@@ -1,11 +1,11 @@
 baseURL: "https://curtislu.in"
-languageCode: en-us
+# languageCode: en-us
 title: Curtis Lu
 theme: PaperMod
 googleAnalytics: G-F88W4SJ3XD
 disqusShortname: curtislu-in
 enableInlineShortcodes: true
-enableRobotsTXT: true
+enableRobotsTXT: false
 pygmentsUseClasses: true
 
 
