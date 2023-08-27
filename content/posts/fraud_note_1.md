@@ -1,24 +1,38 @@
 ---
-title: "詐欺手法揭秘：實用詐欺風險預防閱讀筆記"
+title: "[閱讀筆記]實用詐欺預防：金融科技與電子商務的詐欺與洗錢分析，使用SQL與python(1)"
 date: 2023-08-24T00:12:33+08:00
 draft: false
 ShowToc: true
+TocOpen: true
 cover:
-    image: img/starsky.jpg
-    alt: 'this is the cover'
-    caption: 'this is the caption'
-tags: ['fraud', 'fraudanalysis']
+    image: img/taiwan1.jpeg
+    alt: '詐欺風險分析與預防'
+    caption: 'Photo by <a href="https://unsplash.com/@damabima?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tienko Dima</a> on <a href="https://unsplash.com/photos/uYoVf9I6ANI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+tags: ['fraud', 'risk analysis']
 keywords:
     - fraud risk
     - fraud prevention
     - fraud analysis
+    - 詐欺風險與預防
+    - 偽冒風險與預防
+    - 盜刷風險與預防
+    - 詐欺風險分析
 categories: ['note']
 ---
 
+此系列文章是「實用詐欺預防：金融科技與電子商務的詐欺與洗錢分析，使用SQL與python」這本書的閱讀筆記：
+
+https://www.oreilly.com/library/view/practical-fraud-prevention/9781492093312/
+
+由於目前在台灣一家銀行擔任風險資料科學家的職位，對於詐欺風險（或稱偽冒風險、盜刷風險）這塊很感興趣。
+所以把學習到的知識分享給大家，希望對從事相關工作的人會有些許幫助。
+詐欺風險其實涵蓋了各種產業，可以說只要有電子商務就會有盜刷風險產生，
+所以本書的撰寫視角不是從銀行業出發，而是不分產業從事詐欺風險預防這個工作崗位的人。
+
+
 # Preface
 
-- lack of data is the common reason for failling to understand what is going on
-- event-based historical data as the key to a successful fraud prevention operation.
+- 缺乏資料常常是無法辨識偽冒的主因。
 - 必須從詐欺者與受害者的觀點出發，才能做好防偽冒。
 
 # **Chapter 1 詐欺特徵**
@@ -133,34 +147,23 @@ categories: ['note']
 
 ### 產品專家
 
-認真研究會員約定條款，找退款或退貨政策的漏洞。
-
-甚至熟知客服班表，知道找哪個客服會比較有效。
-
-知道不同產品的不同政策，或不同價格帶
-
-可能濫用優惠券、退款詐騙、偷會員點數。
-
-不能只視為客戶支援問題。
-
-打擊偽冒要加入一點隨機性，不能太「完美」，否則偽冒者可能透過不斷「練習」與試錯，去破解你的系統。例如，可能偽冒者會注意到當交易金額超過10000元時，交易會比較慢完成，從而發現是因為人工在檢核。所以可以改成一個區間，不要亮出底牌。
+- 認真研究會員約定條款，找退款或退貨政策的漏洞。
+- 甚至熟知客服班表，知道找哪個客服會比較有效。
+- 知道不同產品的不同政策，或不同價格帶
+- 可能濫用優惠券、退款詐騙、偷會員點數。
+- 不能只視為客戶支援部門的問題。
+- 打擊偽冒要加入一點隨機性，不能太「完美」，否則偽冒者可能透過不斷「練習」與試錯，去破解你的系統。例如，可能偽冒者會注意到當交易金額超過10000元時，交易會比較慢完成，從而發現是因為人工在檢核。所以可以改成一個區間，不要亮出底牌。
 
 ### 科技專家
 
-用機器人暴力破解
-
-駭客：ransomware, DDoS
-
-組織詐欺通常有高科技，有資金可架設伺服器
-
-Click farm fraud
-
-SIM fraud
+- 用機器人暴力破解
+- 駭客：ransomware, DDoS
+- 組織詐欺通常有高科技，有資金可架設伺服器
+- Click farm fraud
+- SIM fraud
 
 ### Friendly fraudsters
 
-偏向使用者濫用
-
-可能出於大環境的變化 生活壓力使然
-
-這類詐欺可能由別的部門負責。
+- 偏向使用者濫用
+- 可能出於大環境的變化 生活壓力使然
+- 這類詐欺可能由別的部門負責。

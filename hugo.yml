@@ -1,5 +1,5 @@
 baseURL: "https://curtislu.in"
-# languageCode: en-us
+languageCode: zh-tw
 title: Curtis Lu
 theme: PaperMod
 googleAnalytics: G-F88W4SJ3XD
@@ -7,7 +7,6 @@ disqusShortname: curtislu-in
 enableInlineShortcodes: true
 enableRobotsTXT: false
 pygmentsUseClasses: true
-
 
 params:
   env: production
@@ -28,7 +27,7 @@ params:
       url: "https://github.com/curtis-lu"
 
   ShowBreadCrumbs: true
-  showReadingTime: true
+  # showReadingTime: true
   showShareButtons: true
   showPostNavLinks: true
   ShowCodeCopyButtons: true
@@ -44,9 +43,10 @@ params:
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
 
-
+defaultContentLanguage: zh-tw
+defaultContentLanguageInSubdir: true
 languages:
-    en:
+    zh-tw:
         languageName: "Chinese"
         weight: 1
         taxonomies:
