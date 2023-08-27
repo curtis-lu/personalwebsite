@@ -1,6 +1,6 @@
 ---
 title: About
-url: "/about/"
+url: about/
 ShowBreadCrumbs: false
 ---
 
