@@ -7,16 +7,60 @@ disqusShortname: curtislu-in
 enableInlineShortcodes: true
 enableRobotsTXT: false
 pygmentsUseClasses: true
+paginate: 15    # 顯示的文章數
+summaryLength: 140 # 文章概覽的字數
+
+label:
+  - text: Curtis Lu
+  - icon: "img/boulderingicon.jpeg"
+  - iconHeight: 35
+
+assets:
+        favicon: "img/boulderingicon.jpeg"
+        favicon16x16: "img/boulderingicon.jpeg"
+        favicon32x32: "img/boulderingicon.jpeg"
+        apple_touch_icon: "boulderingicon.jpeg"
+        safari_pinned_tab: "boulderingicon.jpeg"
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        noClasses: false
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
 
 params:
   env: production
   description: "Curtis Lu's Blog. "
   author: Curtis Lu
   images: ["bouldering-wall.jpeg"]
+  ShowBreadCrumbs: true
+  showReadingTime: true
+  showShareButtons: true
+  showPostNavLinks: true
+  ShowCodeCopyButtons: true
+  math: true
+  comments: true
+  ShowWordCounts: true
+  VisitCount: true
+  ShowLastMod: true
 
   homeInfoParams:
-    Title: "Hi! I'm Curtis Lu."
-    Content: 'Welcome to my blog. Here you can find something I want to share with you!'
+    Title: "Hi! I'm Curtis Lu. 🧗‍♂️ "
+    Content: '政治學背景出身的金融業資料人，熱愛學習，在這裡分享我覺得有趣的實用知識！<br> '
 
   socialIcons:
     - name: linkedIn
@@ -25,14 +69,6 @@ params:
       url: "https://twitter.com/curtislu368"
     - name: github
       url: "https://github.com/curtis-lu"
-
-  ShowBreadCrumbs: true
-  # showReadingTime: true
-  showShareButtons: true
-  showPostNavLinks: true
-  ShowCodeCopyButtons: true
-  math: true
-  comments: true
 
   fuseOpts:
     isCaseSensitive: false
@@ -74,17 +110,3 @@ languages:
             - name: Search
               url: search/
               weight: 50
-
-
-markup:
-    goldmark:
-        renderer:
-            unsafe: true
-    highlight:
-        noClasses: false
-
-outputs:
-    home:
-        - HTML
-        - RSS
-        - JSON

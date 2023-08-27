@@ -8,9 +8,9 @@ math: true
 enableEmoji: true
 cover:
     image: img/gyakufuji.jpg
-    alt: '??'
+    alt: '逆富士：事實與反事實的意象'
     caption: '逆富士：事實與反事實的意象'
-tags: ['causalinference', 'machinelearning']
+tags: ['causal inference', 'machine learning']
 categories: ['knowledge']
 ---
 

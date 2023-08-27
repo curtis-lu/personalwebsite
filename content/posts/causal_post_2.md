@@ -8,7 +8,7 @@ cover:
     image: img/buildingsandtrees.jpg
     alt: 'this is the cover'
     caption: 'this is the caption'
-tags: ['causalinference', 'machinelearning']
+tags: ['causal inference', 'machine learning']
 categories: ['knowledge']
 ---
 
