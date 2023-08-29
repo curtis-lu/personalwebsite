@@ -60,7 +60,7 @@ params:
 
   homeInfoParams:
     Title: "Hi! I'm Curtis Lu. 🧗‍♂️ "
-    Content: '政治學背景出身的金融業資料人，熱愛學習，在這裡分享我覺得有趣的實用知識！<br> '
+    Content: '一名金融業資料人，在這裡分享我覺得有趣的實用知識！<br> '
 
   socialIcons:
     - name: linkedIn
@@ -69,6 +69,8 @@ params:
       url: "https://twitter.com/curtislu368"
     - name: github
       url: "https://github.com/curtis-lu"
+    - name: medium
+      url: "https://medium.com/@pclu79"
 
   fuseOpts:
     isCaseSensitive: false
@@ -95,18 +97,21 @@ languages:
               name: About
               url: about/
               weight: 10
+            - name: Series
+              url: series/
+              weight: 20
             - identifier: categories
               name: Categories
               url: /categories/
-              weight: 20
+              weight: 30
             - identifier: tags
               name: Tags
               url: /tags/
-              weight: 30
+              weight: 40
             - identifier: archives
               name: Archives
               url: archives/
-              weight: 40
+              weight: 50
             - name: Search
               url: search/
-              weight: 50
+              weight: 60

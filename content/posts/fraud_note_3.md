@@ -1,0 +1,98 @@
+---
+title: "[閱讀筆記]實用詐欺預防：金融科技與電子商務的詐欺與洗錢分析，使用SQL與python(3)"
+date: 2023-08-30T00:14:33+08:00
+draft: false
+ShowToc: true
+TocOpen: true
+cover:
+    image: img/taiwan3.jpg
+    alt: '詐欺風險與機器學習'
+    caption: 'Photo by <a href="https://unsplash.com/@chunchia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">張 峻嘉</a> on <a href="https://unsplash.com/photos/uG0k37LBQUM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+tags: ['fraud', 'risk analysis']
+categories: ['note']
+series: ['practical fraud prevention']
+keywords:
+    - fraud risk
+    - fraud prevention
+    - fraud analysis
+    - practical fraud prevention
+    - 詐欺風險與預防
+    - 偽冒風險與預防
+    - 盜刷風險與預防
+    - 詐欺風險分析
+---
+
+# Chapter 5 **機器學習與詐欺模型**
+
+2010年代早期還沒有人使用機器學習來做偽冒偵測，即使在5年前左右，也很少有公司願意直接投入。但目前已經幾乎到處都在採用了。
+
+## 機器學習的優勢
+
+- **可規模化(scale)**：大量資料有利於訓練，但人工要去分析出規律就比較困難。
+- **可捕捉微妙差異(subtlety)**：規則考慮的面向較少，難以細分差異。
+- **多樣性(Diversity)**：商業規模越來越大，規則難以根據各地區的差異去細分，但機器學習模型可以。
+- **適應性(Adaptability)：**規則設定後可能很快會過時，但很少有團隊有辦法做到時常檢視全部的規則，並很彈性地調整。不相關的規則可能造成錯誤警報，甚至可能跟其他規則衝突。機器學習只要時常重新訓練就不會有這個問題。
+- **負載變化(Load variance)：**促銷或大節日造成交易大量湧入，機器學習模型會有比較少的人工複審的量，不必像規則必須去人工分析後做調整來降低複審的量。所以建議去模型可以把假日或快閃促銷等期間的資料獨立出來分析，避免把那些只在假日消費的客人識別為偽冒。參考以下影片。
+
+    [“We’re Trending!!” When Traffic Is Spiking, How Do You Know It’s Legit?](https://www.rsaconference.com/library/presentation/were-trending-when-traffic-is-spiking-how-do-you-know-its-legit)
+
+- **模式辨認(Pattern recognition)：**模型可以看大量的資料去找出規律，看人類做不到這件事情，而且有些模式是隱含的，人類常常不會注意到。
+
+## 機器學習的挑戰
+
+- **資料的相對稀缺(Relative paucity of data)：**詐欺佔少數，又有各式各樣的詐欺模式，例如信用卡被竊跟帳戶盜用差很多。而且偽冒會快速變化，不能等到累積幾個月的資料之後才讓模型學起來。又或是區域之間也會有差異。
+- **延遲的回饋與過度配適(delayed feedback and overfitting)：**對商店來說，charge back可能已經在交易發生好幾個月之後了。客戶自己也很有可能沒有發現自己的會員點數已經被偷走了。此外，這些延後的標籤可能會讓我們沒有注意到模型過度配適的問題，因為偽冒可能已經變化地跟訓練資料不同，但新的偽冒還沒反應在資料上，導致模型一直產生false positive。
+- **正確標籤資料的困難(the labeled data difficulty)：**因為延遲的回饋問題，模型可能學到錯誤的資訊。另一方面，成功阻擋偽冒也是有代價的，一旦成功阻擋後，偽冒會變少，同時可供訓練的偽冒交易也變少了。
+- **聰明的對手(Intelligent adversary)：**偽冒集團可能會反制，例如故意在特定時段瘋狂攻擊，目的是讓模型去學習這些交易模式用來誤導模型。
+- **解釋性、種族、與偏差(explainability, ethics, and bias)**：避免歧視客戶，對金融業來說，這些也都是重要的監管項目。參考：
+
+    [Google’s Pixel 6 Camera Designed to Take Better Photos of Dark Skin Tones](https://www.obsev.com/news/google-pixel-6-camera-designed-to-take-better-photos-of-dark-skin-tones/)
+
+
+## 基於故事脈絡的模型
+
+- story-based models 是一種把大問題拆解成小問題的建模方法，例如針對青少年盜用身分去購買點數卡的盜刷情境去建模。
+- 小一點的模型也可以讓分析人員有比較高的掌控性，對模型在處理什麼會比較有概念。
+
+## 資料科學家與領域專家的合作
+
+- 資料科學家與領域專家必須密切合作，尤其因為以下兩個原因，沒有合作的話機器學習模型很可能沒有用處：
+    1. 標籤：由於偽冒的類型很多，偽冒案例必須具有代表性，才能透過模型捕捉那些重複發生的偽冒類型 。
+    2. 特徵：領域專家應該去檢視特徵的合理性。
+- 有些偽冒適合用機器學習的異常偵測，有的並不適合。例如Adtech fraud適合，因為有高度自動化，但社交工程等高度人工介入的偽冒就不太適合使用機器學習。
+
+1.**了解各自的職責：**模型關注的是大面向，如果需要緊急或局部的解方不能倚靠模型。
+
+2**.建立目標：**明確想清楚要模型做什麼，再去開發模型。例如要模型可以採取行動？是否可以直接拒絕交易？還是幫助我們做研究？
+
+3.**專注任務：**例如如果目標是為了避免錯誤警報，將可疑交易交給人工處理，就要讓模型去學如何找出灰色地帶。如果要模型能控管偽冒交易，那就要讓模型去學明確的偽冒案例。
+
+4.**知道哪些主要特徵模型應該要看：**建議由人工覆核團隊在檢視案例時，列出可能有用的特徵清單。
+
+5.**決定風險偏好：**通常不會把模型的輸出直接拿來做決策，因為決策通常需要人工可以去調整閾值。如果是新市場，組織可能可以多容許一些詐欺交易。有些規則是專門用來當作控制組，來測試模型的決策。
+
+6.**尊重彼此立場：**就資料科學家而言，可能會想要花時間探索一些新方法新科技，因為一旦可行的話，將帶來很大的價值。但對偽冒分析人員而言，可能需要的是立即有效的方法，即使可能沒有這麼優雅。
+
+## 常見的機器學習應用方法
+
+- 模型的準確度與可解釋性通常是trade-off，準確度排序：神經網路、提升樹、隨機森林、決策樹、線性迴歸。
+- 分類模型(classification)vs聚類模型(clustering)：
+    | 面向 | 分類模型 | 聚類模型 |
+    | --- | --- | --- |
+    | 類型 | 監督式學習 | 非監督式學習 |
+    | 說明 | 根據輸入資料的標籤來分類案例 | 根據相似度來聚類案例，不需要標籤 |
+    | 複雜度 | 較複雜 | 較簡單 |
+    | 演算法 | 羅吉斯迴歸、樸素貝式分類器 | k-means, Fuzzy C-means, Gaussian |
+- Precision vs Recall：
+    - precision: 拒絕的交易裡面，有多少真的是偽冒。
+    - recall: 拒絕的偽冒交易，佔所有偽冒交易多少的比例。
+    - 兩者的關係圖：precision-recall curve
+
+    - 通常是trade-off，決定拒絕的門檻要設在哪個地方是商業問題。例如，為了提升10%的precision，降低15%的recall是否可以接受？
+- gap analysis指的是使用測試資料檢驗機器學習模型。如果模型輸出的是機率值，可以重點去看最低機率、最高機率，或是在門檻機率附近的案例。可以關注以下問題：
+    - 重要特徵是否發揮作用？
+    - 案例與在訓練資料的主要偽冒類型是否相符？
+
+## 本章小結
+
+機器學習模型就像是小孩，要讓他們在資料的遊樂場盡情地玩，他們會創造出令人驚嘆的成果。但別忘了要用我們的經驗知識去引導他們到正確的方向。

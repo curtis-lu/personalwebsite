@@ -5,11 +5,12 @@ draft: false
 ShowToc: true
 TocOpen: true
 cover:
-    image: img/buildingsandtrees.jpg
-    alt: 'this is the cover'
-    caption: 'this is the caption'
+    image: img/taiwan0.jpg
+    alt: '反事實推論與因果圖'
+    caption: 'Photo by <a href="https://unsplash.com/@hngstrm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Henry & Co.</a> on <a href="https://unsplash.com/photos/G0rae74NmvY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
 tags: ['causal inference', 'machine learning']
 categories: ['knowledge']
+series: ['causal inference for the brave and true']
 ---
 
 ## To be continue...

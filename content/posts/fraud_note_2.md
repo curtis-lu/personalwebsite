@@ -6,21 +6,23 @@ ShowToc: true
 TocOpen: true
 cover:
     image: img/taiwan2.jpeg
-    alt: '詐欺風險分析與預防'
+    alt: '詐欺風險分析基礎'
     caption: 'Photo by <a href="https://unsplash.com/@chunchia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">張 峻嘉</a> on <a href="https://unsplash.com/photos/ZFddx3rGaow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
 tags: ['fraud', 'risk analysis']
+categories: ['note']
+series: ['practical fraud prevention']
 keywords:
     - fraud risk
     - fraud prevention
     - fraud analysis
+    - practical fraud prevention
     - 詐欺風險與預防
     - 偽冒風險與預防
     - 盜刷風險與預防
     - 詐欺風險分析
-categories: ['note']
 ---
 
-# Chapter 3 詐騙分析基礎概念
+# Chapter 3 詐欺分析基礎概念
 
 ## 像偽冒者一樣地思考
 
@@ -67,7 +69,7 @@ categories: ['note']
 - friendly fraud or first party fraud也可能增加，消費者的購買習慣即使在經濟條件變差的情況下，可能還是不願意改變。在這種情況下，可能道德風險的機率就會增加。可以即早去完善退款政策等等。
 
 
-# Chapter 4 **詐欺預防衡量標準與投資**
+# Chapter 4 詐欺預防衡量標準與投資
 
 ## 詐欺預防方法
 

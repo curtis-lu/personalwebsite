@@ -7,11 +7,12 @@ TocOpen: true
 math: true
 enableEmoji: true
 cover:
-    image: img/gyakufuji.jpg
-    alt: '逆富士：事實與反事實的意象'
-    caption: '逆富士：事實與反事實的意象'
+    image: img/taiwan.jpg
+    alt: '增益模型與平均因果效益'
+    caption: 'Photo by <a href="https://unsplash.com/@thevernon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vernon Raineil Cenzon</a> on <a href="https://unsplash.com/photos/6rEPAbrXNaY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
 tags: ['causal inference', 'machine learning']
 categories: ['knowledge']
+series: ['causal inference for the brave and true']
 ---
 
 ## 背景介紹：預測 vs 因果推論
