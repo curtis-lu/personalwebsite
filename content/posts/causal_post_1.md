@@ -7,9 +7,9 @@ TocOpen: true
 math: true
 enableEmoji: true
 cover:
-    image: img/taiwan.jpg
+    image: img/causal_ml_1.png
     alt: '增益模型與平均因果效益'
-    caption: 'Photo by <a href="https://unsplash.com/@thevernon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vernon Raineil Cenzon</a> on <a href="https://unsplash.com/photos/6rEPAbrXNaY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+    caption: ''
 tags: ['causal inference', 'machine learning']
 categories: ['knowledge']
 series: ['causal inference for the brave and true']

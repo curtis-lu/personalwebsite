@@ -1,6 +1,6 @@
 baseURL: "https://curtislu.in"
 languageCode: zh-tw
-title: Curtis Lu
+title: Lu's notes
 theme: PaperMod
 googleAnalytics: G-F88W4SJ3XD
 disqusShortname: curtislu-in
@@ -9,18 +9,6 @@ enableRobotsTXT: false
 pygmentsUseClasses: true
 paginate: 15    # 顯示的文章數
 summaryLength: 140 # 文章概覽的字數
-
-label:
-  - text: Curtis Lu
-  - icon: "img/boulderingicon.jpeg"
-  - iconHeight: 35
-
-assets:
-        favicon: "img/boulderingicon.jpeg"
-        favicon16x16: "img/boulderingicon.jpeg"
-        favicon32x32: "img/boulderingicon.jpeg"
-        apple_touch_icon: "boulderingicon.jpeg"
-        safari_pinned_tab: "boulderingicon.jpeg"
 
 markup:
     goldmark:
@@ -44,7 +32,7 @@ taxonomies:
 
 params:
   env: production
-  description: "Curtis Lu's Blog. "
+  description: "Curtis Lu's notes on data science."
   author: Curtis Lu
   images: ["bouldering-wall.jpeg"]
   ShowBreadCrumbs: true
@@ -59,18 +47,24 @@ params:
   ShowLastMod: true
 
   homeInfoParams:
-    Title: "Hi! I'm Curtis Lu. 🧗‍♂️ "
-    Content: '一名金融業資料人，在這裡分享我覺得有趣的實用知識！<br> '
+    Title: "🙋🏻‍♂️ I'm Curtis Lu. "
+    Content: '讀了7年政治學，蟄居於金融業已經6年的資料人。<br> 熱愛資料科學、抱石、學習與挑戰。<br> 在這裡分享覺得有趣的知識，歡迎常來收看。 👨🏻‍💻  '
+  assets:
+    favicon: img/boulderingicon.png
+    favicon16x16: img/boulderingicon.png
+    favicon32x32: img/boulderingicon.png
+    apple_touch_icon: img/boulderingicon.png
+    safari_pinned_tab: img/boulderingicon.png
 
   socialIcons:
     - name: linkedIn
       url: "https://www.linkedin.com/in/pingchienlu/"
-    - name: twitter
-      url: "https://twitter.com/curtislu368"
     - name: github
       url: "https://github.com/curtis-lu"
     - name: medium
       url: "https://medium.com/@pclu79"
+    #- name: twitter
+    #  url: "https://twitter.com/curtislu368"
 
   fuseOpts:
     isCaseSensitive: false
