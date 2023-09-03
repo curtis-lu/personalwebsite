@@ -5,9 +5,9 @@ draft: false
 ShowToc: true
 TocOpen: true
 cover:
-    image: img/taiwan1.jpeg
+    image:
     alt: '詐欺特徵與類型'
-    caption: 'Photo by <a href="https://unsplash.com/@damabima?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tienko Dima</a> on <a href="https://unsplash.com/photos/uYoVf9I6ANI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+    caption: ''
 tags: ['fraud', 'risk analysis']
 categories: ['note']
 series: ['practical fraud prevention']
@@ -16,10 +16,12 @@ keywords:
     - fraud prevention
     - fraud analysis
     - practical fraud prevention
-    - 詐欺風險與預防
-    - 偽冒風險與預防
-    - 盜刷風險與預防
-    - 詐欺風險分析
+    - 詐欺風險
+    - 偽冒風險
+    - 盜刷風險
+    - 風險分析
+    - 偽冒風險預防
+    - IP 分析
 ---
 
 此系列文章是「實用詐欺預防：金融科技與電子商務的詐欺與洗錢分析，使用SQL與python」這本書的閱讀筆記：

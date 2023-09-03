@@ -5,9 +5,9 @@ draft: false
 ShowToc: true
 TocOpen: true
 cover:
-    image: img/taiwan3.jpg
+    image:
     alt: '詐欺風險與機器學習'
-    caption: 'Photo by <a href="https://unsplash.com/@chunchia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">張 峻嘉</a> on <a href="https://unsplash.com/photos/uG0k37LBQUM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+    caption: ''
 tags: ['fraud', 'risk analysis']
 categories: ['note']
 series: ['practical fraud prevention']
@@ -16,10 +16,12 @@ keywords:
     - fraud prevention
     - fraud analysis
     - practical fraud prevention
-    - 詐欺風險與預防
-    - 偽冒風險與預防
-    - 盜刷風險與預防
-    - 詐欺風險分析
+    - 詐欺風險
+    - 偽冒風險
+    - 盜刷風險
+    - 風險分析
+    - 偽冒風險預防
+    - IP 分析
 ---
 
 # Chapter 5 **機器學習與詐欺模型**
