@@ -48,7 +48,7 @@ params:
 
   homeInfoParams:
     Title: "🙋🏻‍♂️ I'm Curtis Lu. "
-    Content: '讀了7年政治學，蟄居於金融業已經6年的資料人。<br> 熱愛資料科學、抱石、學習與挑戰。<br> 在這裡分享覺得有趣的知識，歡迎常來收看。 👨🏻‍💻  '
+    Content: '政治學背景蟄居於金融業的資料人。<br> 熱愛資料科學、抱石、學習與挑戰。<br> 在這裡分享覺得有趣的知識 👨🏻‍💻  '
   assets:
     favicon: img/boulderingicon.png
     favicon16x16: img/boulderingicon.png
@@ -63,6 +63,8 @@ params:
       url: "https://github.com/curtis-lu"
     - name: medium
       url: "https://medium.com/@pclu79"
+    - name: streamlit
+      url: "https://appapp1-idi2rrzcvops6c43hnkcc3.streamlit.app/"
     #- name: twitter
     #  url: "https://twitter.com/curtislu368"
 
