@@ -45,6 +45,7 @@ params:
   ShowWordCounts: true
   VisitCount: true
   ShowLastMod: true
+  opengraph_io_api_key: 61126b03-9322-472b-a949-27fc1372ac6c
 
   homeInfoParams:
     Title: "🙋🏻‍♂️ I'm Curtis Lu. "
