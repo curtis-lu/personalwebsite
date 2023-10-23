@@ -2,7 +2,7 @@
 title: "如何使用 plotly + streamlit 製作資料視覺化網頁？"
 date: 2023-10-09T17:56:46+08:00
 draft: false
-weight: 1
+weight: 2
 ShowToc: true
 TocOpen: true
 cover:
