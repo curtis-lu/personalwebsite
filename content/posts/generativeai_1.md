@@ -117,7 +117,7 @@ Retrieval augmentation 需要一些事前的準備工作，大致如下：
 
 ## 事前準備
 
-### **環境建置**
+### 環境建置
 
 首先環境建置方面，我是使用pyenv管理python版本，加上poetry為每一個專案建立虛擬環境以及管理套件版本。
 
@@ -156,7 +156,7 @@ poetry add chromadb # for vector database
 poetry add streamlit # for streamlit app
 ```
 
-### **申請openAI API key**
+### 申請openAI API key
 
 使用openAI來開發是要錢的，計費規則如網址說明：[Pricing (openai.com)](https://openai.com/pricing)。
 
@@ -210,6 +210,8 @@ openai.api_key  = os.environ['OPENAI_API_KEY']
 
 讀入事先編輯好的文本：
 
+### 載入文本與文本切割
+
 ```python
 with open('./documents/tsb_creditcard.md', 'r') as file:
     text = []
@@ -234,6 +236,8 @@ md_header_splits = markdown_splitter.split_text(markdown_document)
 
 print(len(md_header_splits))
 ```
+
+### embedding and vector database
 
 切割好的文本就可以轉換為embedding vector並存入vector database，這邊使用的database是chroma。
 
@@ -278,6 +282,8 @@ vectordb_load = Chroma(persist_directory=persist_directory,
 畫成圖的話如下：
 
 ![miro](../img/miro231023.png)
+
+### 解析客戶詢問
 
 解析客戶詢問的提示詞：
 
@@ -340,6 +346,8 @@ decomposition_chain = LLMChain(llm=llm,
                                output_key="decomposition")
 ```
 
+### 擷取與統整資訊
+
 初始化根據客戶詢問擷取資訊的retriever：
 
 ```python
@@ -376,6 +384,8 @@ compression_chain = LLMChain(llm=compression_llm,
                              prompt=compression_prompt,
                              output_key="new_context")
 ```
+
+### 問答模型
 
 最後是回答問題的提示詞：
 
@@ -423,7 +433,10 @@ answer = chat_chain.invoke({'question':question,
                             'new_context':new_context['new_context']})
 ```
 
+### streamlit應用程式開發
+
 最後，套用streamlit的模板，將整個程式塞進來後就可以部署。
+在本地端部署的話，只要將下方語法存入`app.py`，然後command line中輸入`streamlit run app.py`就可以在本地端部署。
 
 ```python
 import streamlit as st
@@ -505,7 +518,7 @@ with st.form('my_form'):
         generate_response(text, decomposition_chain, retriever, compression_chain, chat_chain)
 ```
 
-## 結論
+# 結論
 
 本文嘗試使用**Retrieval augmentation**以及**Prompt engineering**的方法，來開發專屬的問答機器人。簡單測試起來，感覺好像還行。當然還有許多可以優化的部分：
 
@@ -518,4 +531,4 @@ with st.form('my_form'):
 
 開發前若能夠清楚瞭解使用情境，並據以分類客戶意圖，對於要如何蒐集及組織文本，以及如何設計提示詞，相信會有很大的幫助。延伸來說，或許設計生成式AI應用程式時，如何”framing”客戶的使用情境可能會是影響客戶體驗的重要因素。
 
-(p.s. 這個專案用下來大概花了3.8元美金，也是不便宜XD 但好像要降價了，希望是真的消息！)
+(p.s. 這個專案用下來大概花了3.8元美金，也是不便宜XD 但好像有消息指出要降價了？)
