@@ -42,7 +42,7 @@ ChatGPT是基於大型語言模型(LLM)而開發出來的應用，主要目的�
     - Sequence-to-Sequence model: 重組一串一串”字”的模型，適合做翻譯、文句摘要。例如BART。
 2. **Fine-tuning：** 使用新任務的資料以及已經pre-train好的的LLM模型，來接著訓練整個模型。可能有災難性遺忘（catastrophic forgetting）的問題。
 3. **Parameter-efficient tuning：** 大部分模型參數不動，只重新訓練部分參數，方式：
-    - selective:
+    - selective: 選擇部分參數重新訓練。
     - Reparameterization: 將部分參數，用一些代數方法做比較簡單地表示後重新訓練。
     - additive: 保留原本模型參數，但額外加上一些可以訓練的參數。
 4. **Retrieval augmentation:** 利用抓取相關資訊來強化模型表現。例如可以連網做搜尋、執行python code做運算等等。與**Prompt engineering**一樣都不需要重新訓練模型。
@@ -471,29 +471,27 @@ def load_templates():
 
     return templates
 
-def generate_response(input_text,
-                      decomposition_chain,
-                      retriever,
-                      compression_chain,
-                      chat_chain):
+def generate_response(input_text, decomposition_chain, retriever,
+                      compression_chain, chat_chain):
 
     question = input_text
-	decomposition = decomposition_chain.invoke(question)
-	context = retriever.invoke(question)
-	new_context = compression_chain.invoke({'question':question,
+    decomposition = decomposition_chain.invoke(question)
+    context = retriever.invoke(question)
+    new_context = compression_chain.invoke({'question':question,
                                             'decomposition':decomposition,
                                             'context':context})
 
-	answer = chat_chain.invoke({'question':question,
+    answer = chat_chain.invoke({'question':question,
                                 'new_context':new_context['new_context']})
 
-	st.info(answer['text'])
+    st.info(answer['text'])
 
 with st.form('my_form'):
     text = st.text_area('Enter text:', '國外網站消費要用哪張卡回饋最高？')
     submitted = st.form_submit_button('Submit')
     if not openai_api_key.startswith('sk-'):
         st.warning('Please enter your OpenAI API key!', icon='⚠')
+
     if submitted and openai_api_key.startswith('sk-'):
 
         vectordb_load = load_vector_store()
@@ -525,7 +523,7 @@ with st.form('my_form'):
 1. 文本結構化，利用metadata來優化資訊擷取過程
 2. 加入memory功能，更有對話感。
 3. 加入tool agent，可以產出python code去執行一些運算。例如客戶提供消費金額試算回饋率。
-4. 結構化的evaluation過程，確保修改的過程有模型表現有越來越好。
+4. 結構化的evaluation過程，確保修改的過程模型表現有越來越好。
 
 對**Retrieval augmentation**以及**Prompt engineering**的方法來說，資料蒐集、文本切割，以及提示詞如何引導模型找尋或統整資訊都非常重要。
 
