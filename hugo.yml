@@ -66,6 +66,8 @@ params:
       url: "https://medium.com/@pclu79"
     - name: streamlit
       url: "https://appapp1-idi2rrzcvops6c43hnkcc3.streamlit.app/"
+    - name: streamlit_llm
+      url: "https://llmtsbcard-poxehe43nbpmpey5apxj29.streamlit.app/"
     #- name: twitter
     #  url: "https://twitter.com/curtislu368"
 
